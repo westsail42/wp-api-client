@@ -1,7 +1,7 @@
 module WpApiClient
   module Entities
     class PostType < Base
-      alias :post_type
+      # alias :resource
 
       def self.represents?(json)
         json.key?("hierarchical") and json.key?("name") and json.key?("slug")
