@@ -11,7 +11,18 @@ module WpApiClient
       else
         response = @connection.get(api_path_from(url), params)
         @headers = response.headers
-        native_representation_of response.body
+        # exceptions PostType Descriptions
+        if api_path_from(url) == 'types'
+          ret = []
+          response.body.each do |k, v|
+            r = native_representation_of v
+            r['_type'] = k
+            ret << r
+          end
+          return ret
+        else
+          native_representation_of response.body
+        end
       end
     end
 
@@ -23,7 +34,7 @@ module WpApiClient
       result
     end
 
-  private
+    private
 
     def api_path_from(url)
       url.split('wp/v2/').last
