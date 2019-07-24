@@ -7,7 +7,8 @@ module WpApiClient
       Meta,
       Term,
       Taxonomy,
-      Error
+      Error,
+      PostType
     ]
   end
 end
