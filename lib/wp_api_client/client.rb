@@ -15,7 +15,7 @@ module WpApiClient
         if api_path_from(url) == 'types'
           ret = []
           response.body.each do |k, v|
-            r = native_representation_of v
+            r = WpApiClient::Entities::PostType.new(v)
             r['_type'] = k
             ret << r
           end
