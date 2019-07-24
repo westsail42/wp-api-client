@@ -40,7 +40,7 @@ module WpApiClient
 
     def initialize(json)
       @error = OpenStruct.new(json)
-      @status = @error.data["status"]
+      @status = @error.data.try( :[], "status" )
     end
   end
 end
