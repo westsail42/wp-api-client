@@ -13,6 +13,7 @@ require "wp_api_client/entities/term"
 require "wp_api_client/entities/image"
 require "wp_api_client/entities/error"
 require "wp_api_client/entities/types"
+require "wp_api_client/entities/post_type"
 
 require "wp_api_client/client"
 require "wp_api_client/concurrent_client"
