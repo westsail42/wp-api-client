@@ -40,15 +40,15 @@ module WpApiClient
       end
 
       def geo_lat
-        post['geo_location']['lat']
+        post['geo_location'].try(:[], 'lat')
       end
 
       def geo_lng
-        post['geo_location']['lng']
+        post['geo_location'].try(:[], 'lng')
       end
 
       def geo_address
-        post['geo_location']['address']
+        post['geo_location'].try(:[], 'address')
       end
 
       def meta(key = nil)
