@@ -39,6 +39,18 @@ module WpApiClient
         relations("author")
       end
 
+      def geo_lat
+        post['geo_location']['lat']
+      end
+
+      def geo_lng
+        post['geo_location']['lng']
+      end
+
+      def geo_address
+        post['geo_location']['address']
+      end
+
       def meta(key = nil)
         @meta ||= relations("https://api.w.org/meta")
 
