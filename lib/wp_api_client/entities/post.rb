@@ -7,6 +7,14 @@ module WpApiClient
         json.dig("_links", "about") and json["_links"]["about"].first["href"] =~ /wp\/v2\/types/
       end
 
+      def post_id
+        post["id"]
+      end
+
+      def post_type
+        post["type"]
+      end
+
       def title
         post["title"]["rendered"]
       end
